@@ -1,0 +1,16 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <app-option-card-list></app-option-card-list>
+
+  <app-around-me title="اطراف من روی نقشه" [places]="[
+  { icon: 'restaurant-outline', name: 'رستوران' },
+  { icon: 'bed-outline', name: 'هتل' },
+  { icon: 'flame-outline', name: 'پمپ بنزین' },
+  { icon: 'water-outline', name: 'سرویس بهداشتی' }
+]"></app-around-me>
+  <app-place-carousel title="در شهر چه می گذرد"></app-place-carousel>
+  <app-bottom-tab-bar></app-bottom-tab-bar>
+</ion-content>

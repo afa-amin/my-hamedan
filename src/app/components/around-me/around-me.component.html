@@ -1,0 +1,7 @@
+<h2 class="text-xl text-black font-semibold my-3 px-2">{{ title }}</h2>
+<div class="flex overflow-x-auto gap-4 p-4 no-scrollbar">
+  <div *ngFor="let place of places" class="min-w-[100px] flex flex-col items-center bg-white rounded-2xl shadow p-3 cursor-pointer hover:shadow-md transition">
+    <ion-icon [name]="place.icon" class="text-primary text-3xl mb-2"></ion-icon>
+    <span class="text-xs font-medium text-gray-600 text-center">{{ place.name }}</span>
+  </div>
+</div>
