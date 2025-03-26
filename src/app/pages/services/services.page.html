@@ -1,0 +1,43 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <app-option-card-list [options]="[
+  { icon: 'wallet-outline', label: 'کیف پول من', route: '/home/my-wallet' },
+  { icon: 'star-outline', label: 'امتیاز من', route: '/home/points' },
+  { icon: 'person-outline', label: 'پروفایل من', route: '/home/profile' },
+  { icon: 'apps-outline', label: 'اپلیکیشن من', route: '/home/apps' }
+]"></app-option-card-list>
+  <app-around-me 
+  title="اطراف من" 
+  [places]="[
+    { icon: 'restaurant-outline', name: 'رستوران', route: '/categories/restaurants' },
+    { icon: 'fast-food-outline', name: 'فست فود', route: '/categories/fastfood' },
+    { icon: 'cafe-outline', name: 'کافه', route: '/categories/cafes' },
+    { icon: 'bed-outline', name: 'هتل', route: '/categories/hotels' },
+    { icon: 'flame-outline', name: 'پمپ بنزین', route: '/categories/gas-stations' },
+    { icon: 'water-outline', name: 'سرویس بهداشتی', route: '/categories/toilets' },
+    { icon: 'medkit-outline', name: 'داروخانه', route: '/categories/pharmacies' },
+    { icon: 'medkit-outline', name: 'بیمارستان', route: '/categories/hospitals' },
+    { icon: 'cart-outline', name: 'سوپرمارکت', route: '/categories/supermarkets' },
+    { icon: 'shirt-outline', name: 'پوشاک', route: '/categories/clothing' },
+    { icon: 'library-outline', name: 'کتابخانه', route: '/categories/libraries' },
+    { icon: 'school-outline', name: 'مدرسه', route: '/categories/schools' },
+    { icon: 'bus-outline', name: 'ایستگاه اتوبوس', route: '/categories/bus-stations' },
+    { icon: 'train-outline', name: 'ایستگاه مترو', route: '/categories/subway-stations' },
+    { icon: 'car-outline', name: 'پارکینگ', route: '/categories/parking' },
+    { icon: 'walk-outline', name: 'پیاده رو', route: '/categories/pedestrian' },
+    { icon: 'fitness-outline', name: 'باشگاه ورزشی', route: '/categories/gyms' },
+    { icon: 'cut-outline', name: 'آرایشگاه', route: '/categories/barbershops' },
+    { icon: 'cash-outline', name: 'بانک', route: '/categories/banks' },
+    { icon: 'phone-portrait-outline', name: 'فروشگاه موبایل', route: '/categories/mobile-shops' }
+  ]"
+  ></app-around-me>
+  <!-- <app-place-carousel title="در شهر چه می گذرد"></app-place-carousel> -->
+
+  <app-service-list title="شهر"></app-service-list>  
+  <app-service-list title="روستا"></app-service-list>  
+  <app-service-list title="شهرداری"></app-service-list>  
+  <app-bottom-tab-bar></app-bottom-tab-bar>
+</ion-content>

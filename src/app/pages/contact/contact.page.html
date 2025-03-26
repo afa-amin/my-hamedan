@@ -1,0 +1,34 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <div class="w-full h-96 rounded-xl overflow-hidden shadow-lg border mb-6">
+    <ion-spinner *ngIf="loadingMap" name="crescent"></ion-spinner>
+<div id="map" [class.hidden]="loadingMap"></div>
+
+  </div>
+
+  <p class="text-center text-gray-700 text-lg font-semibold mb-2">
+    لطفا مکان مورد نظر خود را روی نقشه انتخاب کنید!
+  </p>
+  
+  <ion-item>
+    <ion-label position="stacked" class="font-semibold">آدرس انتخابی شما:</ion-label>
+    <ion-textarea readonly [(ngModel)]="selectedAddress" placeholder="آدرس شما اینجا نمایش داده می‌شود"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked" class="font-semibold">آدرس دقیق‌تر:</ion-label>
+    <ion-textarea [(ngModel)]="detailedAddress" placeholder="در صورت نیاز، توضیحات دقیق‌تر وارد کنید..."></ion-textarea>
+  </ion-item>
+
+  <ion-button expand="block" color="success" class="mt-4" (click)="confirmLocation()">
+    تایید و ثبت
+  </ion-button>
+
+  <ion-footer>
+    <app-bottom-tab-bar></app-bottom-tab-bar>
+  </ion-footer>
+</ion-content>

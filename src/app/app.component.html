@@ -1,8 +1,3 @@
-<!-- <ion-app>
-  <ion-router-outlet></ion-router-outlet>
-</ion-app> -->
-
-
 <ion-app>
   <ion-menu menuId="main-menu" contentId="main">
     <ion-header>
@@ -13,20 +8,12 @@
     <ion-content>
       <ion-list>
         <ion-item>
-          <ion-icon name="home-outline" slot="start"></ion-icon>
+          <ion-icon [routerLink]="['/home']" name="home-outline" slot="start"></ion-icon>
           <ion-label>خانه</ion-label>
         </ion-item>
-        <ion-item>
+        <ion-item [routerLink]="['/home/profile']">
           <ion-icon name="person-outline" slot="start"></ion-icon>
           <ion-label>پروفایل</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="settings-outline" slot="start"></ion-icon>
-          <ion-label>تنظیمات</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-icon name="log-out-outline" slot="start"></ion-icon>
-          <ion-label>خروج</ion-label>
         </ion-item>
         </ion-list>
     </ion-content>

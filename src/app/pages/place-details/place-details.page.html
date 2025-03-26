@@ -1,0 +1,29 @@
+
+<ion-content>
+  <ion-header>
+    <app-header></app-header>
+    </ion-header>
+<div class="p-4 bg-gradient-to-b from-white via-gray-50 to-gray-100">
+  <img [src]="place.image" alt="{{ place.name }}" class="rounded-2xl shadow-xl mb-4 object-cover w-full max-h-72">
+
+  <button class="flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded-xl shadow hover:bg-green-600 transition-all mb-4" (click)="showOnMap()">
+    <ion-icon name="location-outline"></ion-icon>
+    نمایش روی نقشه
+  </button>
+
+  <h1 class="text-2xl font-bold text-gray-800 mb-3">{{ place.name }}</h1>
+  <p class="text-gray-700 leading-relaxed mb-5 text-justify">
+    {{ place.description }}
+  </p>
+
+  <div class="bg-white rounded-2xl shadow-md p-4 mb-24">
+    <h2 class="text-xl font-semibold text-blue-700 my-5 ">ویژگی‌ها</h2>
+    <p class="text-gray-700 leading-relaxed text-justify">
+      {{ place.features }}
+    </p>
+  </div>
+</div>
+<ion-footer>
+  <app-bottom-tab-bar></app-bottom-tab-bar>
+</ion-footer>
+</ion-content>

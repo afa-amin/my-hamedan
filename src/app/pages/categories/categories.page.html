@@ -1,0 +1,50 @@
+<!-- [outline]="selectedCategoryId !== category.id" -->
+
+<ion-content>
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+<div class="flex overflow-x-auto gap-10 px-6 py-5 no-scrollbar w-100">
+  <div
+    *ngFor="let category of allCategories"
+    (click)="changeCategory(category.id)"
+    class="cursor-pointer transition-all w-100 text-center"
+  >
+    <ion-icon [name]="category.icon" class=""></ion-icon>
+    {{ category.name }}
+</div>
+</div>
+
+<div class="grid gap-4 mb-28">
+  <ion-card *ngFor="let place of samplePlaces" class="rounded-xl">
+    <div class="flex items-center p-4">
+      <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center mr-4">
+        <ion-icon [name]="place.icon" class="text-2xl text-gray-500"></ion-icon>
+      </div>
+      
+      <div class="flex-1">
+        <div class="flex justify-between items-start mb-1">
+          <h3 class="font-bold text-gray-800">{{ place.name }}</h3>
+          <span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+            {{ place.category }}
+          </span>
+        </div>
+        
+        <div class="flex items-center text-sm text-gray-600 mb-2">
+          <ion-icon name="walk-outline" class="mr-1"></ion-icon>
+          <span>{{ place.distance }}</span>
+        </div>
+        
+        <div class="flex items-center">
+          <ion-icon name="star" class="text-yellow-500 mr-1"></ion-icon>
+          <span class="text-sm">{{ place.rating }}</span>
+        </div>
+      </div>
+    </div>
+  </ion-card>
+</div>
+
+  <ion-footer>
+    <app-bottom-tab-bar></app-bottom-tab-bar>
+  </ion-footer>
+</ion-content>

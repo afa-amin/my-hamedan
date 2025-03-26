@@ -1,0 +1,48 @@
+
+<ion-content class="bg-gray-50 font-[Vazirmatn] p-4">
+
+  <ion-header>
+    <app-header></app-header>
+  </ion-header>
+<div class="bg-white shadow-xl rounded-2xl p-6 mb-6 text-center">
+  <p class="text-lg font-semibold text-gray-600 mb-2">موجودی حساب:</p>
+  <p class="text-3xl font-extrabold text-green-500">{{ balance | number }} ریال</p>
+  <ion-button expand="block" fill="outline" class="mt-4">
+    لیست تراکنش‌ها
+  </ion-button>
+</div>
+
+<div class="bg-white shadow-xl rounded-2xl p-6 mb-6">
+  <p class="text-lg font-semibold text-gray-600 mb-4 text-center">افزایش موجودی</p>
+  <p class="text-gray-500 text-center mb-4">مبلغ دلخواه خود را انتخاب کنید:</p>
+
+  <div class="grid grid-cols-2 gap-3 mb-4">
+    <ion-button
+      *ngFor="let amount of amounts"
+      expand="block"
+      fill="{{selectedAmount === amount ? 'solid' : 'outline'}}"
+      color="{{selectedAmount === amount ? 'success' : 'medium'}}"
+      (click)="selectAmount(amount)">
+      {{ amount | number }} ریال
+    </ion-button>
+  </div>
+
+  <ion-item>
+    <ion-input class="px-5"
+      placeholder="یا مبلغ دلخواه را وارد کنید"
+      type="number"
+      [(ngModel)]="selectedAmount"
+      name="customAmount"
+      min="0">
+    </ion-input>
+  </ion-item>
+
+  <ion-button expand="block" class="mt-6" color="success" (click)="increaseBalance()">
+    افزایش اعتبار
+  </ion-button>
+</div>
+<ion-footer>
+
+  <app-bottom-tab-bar></app-bottom-tab-bar>
+</ion-footer>
+</ion-content>

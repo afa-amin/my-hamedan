@@ -1,0 +1,64 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+   
+
+<ion-content class="ion-padding bg-gray-50">
+  <ion-title class="text-xl font-bold text-gray-800">{{ serviceTitle }}</ion-title>
+
+  <div class="mb-6 p-4 bg-white rounded-lg shadow-sm flex justify-start items-center">
+    <p class="text-gray-600 mb-1 mx-5">متوسط زمان پاسخگویی </p>
+    <p class="text-white font-medium bg-blue-500 h-fit w-16 text-center p-2 rounded-full">{{ responseDays }} روز</p> 
+  </div>
+
+
+  <ion-accordion-group class="w-full mb-6">
+    
+    <ion-accordion value="description">
+      <ion-item slot="header" class="border-b border-gray-200">
+        <ion-label class="font-semibold">شرح خدمت</ion-label> 
+      </ion-item>
+      <div slot="content" class="p-4 text-gray-700 bg-gray-50">
+        {{ serviceDescription }}
+      </div>
+    </ion-accordion>
+
+
+    <ion-accordion value="conditions">
+      <ion-item slot="header" class="border-b border-gray-200">
+        <ion-label class="font-semibold">شرایط و تعهدات</ion-label> 
+      </ion-item>
+      <div slot="content" class="p-4 text-gray-700 bg-gray-50">
+        {{ serviceConditions }} 
+      </div>
+    </ion-accordion>
+
+    <ion-accordion value="documents">
+      <ion-item slot="header" class="border-b border-gray-200">
+        <ion-label class="font-semibold">مدارک مورد نیاز</ion-label> 
+      </ion-item>
+      <div slot="content" class="p-4 text-gray-700 bg-gray-50">
+        {{ requiredDocuments }}
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-item class="mb-6">
+    <!-- <ion-checkbox>I agree to the terms and conditions</ion-checkbox> -->
+
+
+    <ion-label class="text-gray-700">شرایط را خوانده و می‌پذیرم</ion-label>
+  </ion-item>
+
+  <ion-button 
+    expand="block" 
+    class="bg-blue-500 text-white font-medium"
+    [disabled]="!isConditionsAccepted"
+  >
+    ارسال درخواست
+  </ion-button>
+  <ion-footer>
+    <app-bottom-tab-bar></app-bottom-tab-bar>
+  </ion-footer>
+</ion-content>
