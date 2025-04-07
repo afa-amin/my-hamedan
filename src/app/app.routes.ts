@@ -55,5 +55,9 @@ export const routes: Routes = [
   {
     path: 'map/:category',
     loadComponent: () => import('./pages/map/map.page').then( m => m.MapPage)
-  }
+  },   {
+    path: 'signin',
+    loadComponent: () => import('./pages/signin/signin.page').then( m => m.SigninPage)
+  },
+ 
 ];

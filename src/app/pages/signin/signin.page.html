@@ -1,0 +1,48 @@
+<div class="flex items-center justify-center h-screen bg-gray-100">
+  <form
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+    class="bg-white p-8 rounded shadow-md w-full max-w-sm"
+  >
+    <h2 class="text-2xl font-bold mb-6 text-center">فرم ورود</h2>
+
+    <div class="mb-4">
+      <label class="block text-gray-700">آدرس ایمیل <span class="text-red-500 text-sm">*</span></label>
+      <input
+        type="email"
+        formControlName="email"
+        class="mt-1 p-2 w-full border rounded focus:outline-none focus:ring focus:border-blue-300"
+      />
+      <div
+        *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+        class="text-red-500 text-sm"
+      >
+        شامل کاراکتر "&#64;" باشد
+      </div>
+    </div>
+
+    <div class="mb-6">
+      <label class="block text-gray-700">رمز ورود <span class="text-red-500 text-sm">*</span></label>
+      <input
+        type="password"
+        formControlName="password"
+        class="mt-1 p-2 w-full border rounded focus:outline-none focus:ring focus:border-blue-300"
+      />
+      <div
+        *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+        class="text-red-500 text-sm"
+      >
+       حداقل 8 کاراکتر داشته باشد
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="loginForm.invalid"
+      class="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition"
+    >
+      ثبت
+    </button>
+  </form>
+</div>
+
